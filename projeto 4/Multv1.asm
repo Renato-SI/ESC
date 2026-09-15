@@ -1,7 +1,7 @@
 @R1
 D=M
 @i
-M=D
+M=D     // i = R1
 
 @sum
 M=0
@@ -10,24 +10,24 @@ M=0
     @i
     D=M
     @STOP
-    D;JEQ
+    D;JEQ   // if  i == 0 goTo (STOP)
 
     @R0
-    D=M
+    D=M     // Termo Multiplicador
     @sum
-    M=D+M
+    M=D+M   // sum = R0 + sum (i vezes)
 
     @i
-    M=M-1
+    M=M-1   // i = i - 1
 
     @LOOP
-    0;JMP
+    0;JMP 
 
 (STOP)
     @sum
     D=M
     @R2
-    M=D
+    M=D // R2 = sum
 
 (END)
     @END
